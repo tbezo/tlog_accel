@@ -9,8 +9,8 @@ from MlcLeafAccel import MlcLeafAccel
 
 myaccel = MlcLeafAccel(r'c:\temp\MLC_accel25.bin')
 
-print(f"Daten für Leaf 62:\nBeschleunigung: {myaccel.accel_mean()[60]}" 
-      f"\nGeschwindigkeit: {myaccel.speed_mean()[60]} "
-      f"\nStandardabweichung: {myaccel.speed_mean_std()[60]}")
+print(f"Data for Leaf 62:\nAcceleration: {myaccel.accel_mean()[61]}" 
+      f"\nVelocity: {myaccel.speed_mean()[61]} "
+      f"\nStandard deviation: {myaccel.speed_mean_std()[61]}")
 
 plt.plot(myaccel.leaf_accels[61])
