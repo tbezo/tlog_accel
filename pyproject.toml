@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=42"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tlog_accel"
+version = "0.1"
+dependencies = [
+    "numpy>=1.26.0",
+	"scipy>=1.14.0",
+    "pylinac>=3.31.0",
+    "requests>=2.26.0",
+]
