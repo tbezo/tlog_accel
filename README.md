@@ -24,14 +24,18 @@ import matplotlib.pyplot as plt
 
 plt.plot(myaccel.leaf_pos[3])
 ```
+<img width="376" height="248" alt="Position" src="https://github.com/user-attachments/assets/bff770e2-5ddc-4f28-8b12-2cd16d29508d" />
 
 ```
 plt.plot(myaccel.leaf_speeds[3])
 ```
+<img width="377" height="248" alt="Speed" src="https://github.com/user-attachments/assets/3c5ac25a-577c-453f-b533-38f90f3d5956" />
 
 ```
 plt.plot(myaccel.leaf_accels[3])
 ```
+<img width="382" height="248" alt="Acceleration" src="https://github.com/user-attachments/assets/f355e201-6df0-4c99-a3bd-b3c4520f244d" />
+
 
 ## Install Instructions for pip
 ```
