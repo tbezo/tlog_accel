@@ -17,3 +17,8 @@ print(f"Data for Leaf 61:\nAcceleration: {myaccel.accel_mean()[61]}\n"
 ```
 Since pylinac uses sacrificial leaf movements to modulate the leaf speed the first and last leaf of each leaf carriage will not use the speeds you set with pylinac.
 
+## Install Instructions for pip
+```
+source ~/venvs/myvenv/bin/activate #optional
+pip install git+https://github.com/tbezo/tlog_accel
+```
