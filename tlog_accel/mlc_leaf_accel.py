@@ -103,21 +103,6 @@ class MlcLeafAccel:
             accel_peaks.append(peaks_combined)
         return accel_peaks
 
-    def accel_mean(self) -> list:
-        """
-        Calculate the mean of all acceleration for each leaf.
-        
-        Only interesting when the plan has one repeated fixed velocity.
-
-        Returns
-        -------
-        list
-            List with the mean accelerations for each leaf.
-
-        """
-        amean = [np.mean(np.abs([mean[1] for mean in peak])) 
-                 for peak in self.accel_peaks]
-        return amean
 
     def speed_mean(self) -> list:
         """
@@ -172,3 +157,50 @@ class MlcLeafAccel:
             
         stddev = [np.sqrt(np.sum(np.square(y))) / len(z) for z in mean_speeds_std]
         return stddev
+
+    def accel_mean(self) -> list:
+        """
+        Calculate the mean of all accelerations for each leaf.
+        
+        Only interesting when the plan has one repeated fixed velocity.
+
+        Returns
+        -------
+        list
+            List with the mean accelerations for each leaf.
+
+        """
+        amean = [np.mean(np.abs([mean[1] for mean in peak])) 
+                 for peak in self.accel_peaks]
+        return amean
+    
+    def accel_stats(self, skip_leafs: set[int] = {0,59,60,119}) -> dict:
+        """
+        Calculate some statistics over all leafs accelerations.
+        
+        Values for the sacrificial leafs are ignored.
+
+        Parameters
+        ----------
+        skip_leafs : set[int], optional
+            Leaf indices of all sacrificial Leafs to exclude. The default is 
+            {0,59,60,119}.
+
+        Returns
+        -------
+        dict
+            Dict contianing the total mean, min, max and 
+            standard deviation for leaf accelerations.
+
+        """
+        accel_filtered = [x for i, x in enumerate(self.accel_mean()) 
+                          if i not in skip_leafs]
+        results_dict = {
+            'accel_total_mean': np.mean(accel_filtered),
+            'accel_max': np.max(accel_filtered),
+            #'accel_max_leaf': ,
+            'accel_min': np.min(accel_filtered),
+            #'accel_min_leaf': ,
+            'accel_std': np.std(accel_filtered)
+            }
+        return results_dict
