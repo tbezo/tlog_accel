@@ -1,5 +1,5 @@
 # Calculating Leaf Acceleration from Trajetory Logfiles
-With tlog_accel you can calculate leaf accelerations from Varian Trajetory Logfiles. The module uses the incredible [pylinac](https://github.com/jrkerns/pylinac) library to read the position data and calculates the acceleration by gradient formation.
+With tlog_accel you can calculate leaf accelerations from Varian Trajectory Logfiles. The module uses the incredible [pylinac](https://github.com/jrkerns/pylinac) library to read the position data and calculates the acceleration by gradient formation.
 
 ## Creating an Irradiation Plan
 For plan creation please follow the [pylinac documentation](https://pylinac.readthedocs.io/en/latest/plan_generator.html) and generate a [MLC speed plan](https://pylinac.readthedocs.io/en/latest/plan_generator.html#mlc-speed) with four or five subfield that utilize the maximum travel speed. There is code in the example folder for this project.
