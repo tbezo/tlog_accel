@@ -15,7 +15,23 @@ print(f"Data for Leaf 61:\nAcceleration: {myaccel.accel_mean()[61]}\n"
       f"Velocity: {myaccel.speed_mean()[61]\n} "
       f"Standard deviation: {myaccel.speed_mean_std()[61]}")
 ```
-Since pylinac uses sacrificial leaf movements to modulate the leaf speed the first and last leaf of each leaf carriage will not use the speeds you set with pylinac.
+Since pylinac uses sacrificial leaf movements to modulate the leaf speed the first and last leaf of each leaf carriage will not use the speeds you set with pylinac (if you use the example).
+
+## Plotting Leaf Information
+With pyplot you can plot the leaf position, velocity and acceleration.
+```python
+import matplotlib.pyplot as plt
+
+plt.plot(myaccel.leaf_pos[3])
+```
+
+```
+plt.plot(myaccel.leaf_speeds[3])
+```
+
+```
+plt.plot(myaccel.leaf_accels[3])
+```
 
 ## Install Instructions for pip
 ```
