@@ -5,7 +5,7 @@ Created on Wed May 27 16:55:55 2026
 @author: bez0t
 """
 import matplotlib.pyplot as plt
-from MlcLeafAccel import MlcLeafAccel
+from tlog_accel import MlcLeafAccel
 
 myaccel = MlcLeafAccel(r'c:\temp\MLC_accel25.bin')
 
