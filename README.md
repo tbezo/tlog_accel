@@ -11,9 +11,11 @@ from tlog_accel import MlcLeafAccel
 
 myaccel = MlcLeafAccel(r'c:\temp\MLC_accel25.bin')
 
-print(f"Data for Leaf 61:\nAcceleration: {myaccel.accel_mean()[61]}\n" 
+print(f"Data for Leaf 62:\nAcceleration: {myaccel.accel_mean()[61]}\n" 
       f"Velocity: {myaccel.speed_mean()[61]\n} "
       f"Standard deviation: {myaccel.speed_mean_std()[61]}")
+	  
+print(myaccel.accel_stats())
 ```
 Since pylinac uses sacrificial leaf movements to modulate the leaf speed the first and last leaf of each leaf carriage will not use the speeds you set with pylinac (if you use the example).
 
