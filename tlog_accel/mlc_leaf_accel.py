@@ -178,7 +178,7 @@ class MlcLeafAccel:
         """
         Calculate some statistics over all leafs accelerations.
         
-        Values for the sacrificial leafs are ignored.
+        Values for the sacrificial leafs are skipped.
 
         Parameters
         ----------
@@ -189,18 +189,19 @@ class MlcLeafAccel:
         Returns
         -------
         dict
-            Dict contianing the total mean, min, max and 
+            Dict contianing the total mean, min (+Leaf#), max (+Leaf#) and 
             standard deviation for leaf accelerations.
 
         """
-        accel_filtered = [x for i, x in enumerate(self.accel_mean()) 
+        amean = self.accel_mean()
+        accel_filtered = [x for i, x in enumerate(amean) 
                           if i not in skip_leafs]
         results_dict = {
             'accel_total_mean': np.mean(accel_filtered),
             'accel_max': np.max(accel_filtered),
-            #'accel_max_leaf': ,
+            'accel_max_leaf': amean.index(np.max(accel_filtered))+1,
             'accel_min': np.min(accel_filtered),
-            #'accel_min_leaf': ,
+            'accel_min_leaf': amean.index(np.min(accel_filtered))+1,
             'accel_std': np.std(accel_filtered)
             }
         return results_dict
