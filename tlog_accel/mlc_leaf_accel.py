@@ -176,9 +176,10 @@ class MlcLeafAccel:
     
     def accel_stats(self, skip_leafs: set[int] = {0,59,60,119}) -> dict:
         """
-        Calculate some statistics over all leafs accelerations.
+        Calculate some statistics over all leaf accelerations.
         
-        Values for the sacrificial leafs are skipped.
+        Values for the sacrificial leafs are skipped. The reported leaf numbers
+        are in the range 1-120 (not starting with 0).
 
         Parameters
         ----------
