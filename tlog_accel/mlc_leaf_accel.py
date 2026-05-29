@@ -198,10 +198,10 @@ class MlcLeafAccel:
                           if i not in skip_leafs]
         results_dict = {
             'accel_total_mean': np.mean(accel_filtered),
+            'accel_std': np.std(accel_filtered),
             'accel_max': np.max(accel_filtered),
             'accel_max_leaf': amean.index(np.max(accel_filtered))+1,
             'accel_min': np.min(accel_filtered),
-            'accel_min_leaf': amean.index(np.min(accel_filtered))+1,
-            'accel_std': np.std(accel_filtered)
+            'accel_min_leaf': amean.index(np.min(accel_filtered))+1
             }
         return results_dict
